@@ -1,18 +1,18 @@
-# Occupation-Level AI Impacts
+# Occupation-Level AI Effects
 
 [Back to main README](../../README.md)
 
 ## Overview
 
-This dataset contains model-predicted AI impacts at the 3-digit SOC (Standard Occupational Classification) level. The data underlies Figures A15 and A16 in the paper, which show occupation-level winners and losers from AI in terms of wage bill changes and employment share changes.
+This dataset contains model-predicted AI effects at the 3-digit SOC (Standard Occupational Classification) level. The data underlies Figures A15 and A16 in the paper, which show occupation-level winners and losers from AI in terms of wage bill changes and employment share changes.
 
 Two AI scenarios are reported:
-- **Generative AI:** Impacts from generative AI only (augmentation, automation, and simplification of tasks)
-- **Generative + physical AI:** Impacts from generative AI combined with physical AI (e.g., robotics)
+- **Generative AI:** Effects from generative AI only (augmentation, automation, and simplification of tasks)
+- **Generative + physical AI:** Effects from generative AI combined with physical AI (e.g., robotics)
 
 ## File
 
-- [`occupation_ai_impacts.csv`](occupation_ai_impacts.csv) -- 93 occupations at the 3-digit SOC level, 26 variables
+- [`occupation_ai_effects.csv`](occupation_ai_effects.csv) -- 93 occupations at the 3-digit SOC level, 26 variables
 
 ## Variables
 

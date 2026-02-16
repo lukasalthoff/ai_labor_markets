@@ -1,14 +1,14 @@
-# Major-Level AI Impacts
+# College Major-Level AI Effects
 
 [Back to main README](../../README.md)
 
 ## Overview
 
-This dataset contains model-predicted AI impacts on the returns to college majors. The data underlies Figure A20 in the paper, which ranks fields of study by their predicted AI-induced change in wage returns. The mapping from majors to AI impacts uses a direct major-task-skill mapping based on course-level skill requirements from the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8) (Javadian Sabet et al., 2024), combined with the model's predicted changes in returns to skills.
+This dataset contains model-predicted AI effects on the returns to college majors. The data underlies Figure A20 in the paper, which ranks fields of study by their predicted AI-induced change in wage returns. The mapping from majors to AI effects uses a direct major-task-skill mapping based on course-level skill requirements from the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8) (Javadian Sabet et al., 2024), combined with the model's predicted changes in returns to skills.
 
 ## File
 
-- [`major_ai_impacts.csv`](major_ai_impacts.csv) -- 62 fields of study
+- [`major_ai_effects.csv`](major_ai_effects.csv) -- 62 fields of study
 
 ## Variables
 
@@ -17,7 +17,7 @@ This dataset contains model-predicted AI impacts on the returns to college major
 | `field_name` | Name of the field of study (following the taxonomy in Javadian Sabet et al., 2024) |
 | `rel_ch_meanwage` | AI-induced change in mean wage return to the major (weighted average of skill-level wage changes, weighted by the major's skill intensity) |
 | `rel_ch_meanwage_centered` | Standardized version: `(rel_ch_meanwage - mean) / sd` across all majors, then multiplied by 100 for the figure |
-| `rank` | Rank from highest (1 = most positive impact) to lowest |
+| `rank` | Rank from highest (1 = most positive effect) to lowest |
 
 ## Methodology
 
@@ -30,7 +30,7 @@ This dataset contains model-predicted AI impacts on the returns to college major
    - Technical: -1.538%
    - Verbal: -2.700%
 
-3. **Major-level impact:** The AI-induced wage change for each major is the weighted average of skill-level wage changes, weighted by the major's skill intensity scores.
+3. **Major-level effect:** The AI-induced wage change for each major is the weighted average of skill-level wage changes, weighted by the major's skill intensity scores.
 
 ## Crosswalking to CIP Codes
 
