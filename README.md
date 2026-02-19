@@ -12,15 +12,15 @@ The paper is available [here](https://hugoreichardt.com/pdf/tstc_compadvantage.p
 Authors: [Lukas Althoff](https://lukasalthoff.com) (Stanford University) & [Hugo Reichardt](https://hugoreichardt.com) (CREI)
 
 
-## Model predictions
+## Datasets
 
-**Model-predicted effects of AI**
+### Model-predicted effects of AI
 
   - **[By occupation](model_predictions/occupations/)**: Model-predicted AI effects at the 3-digit SOC level (93 occupations), including pre- and post-AI employment shares, mean wages, and wage bills for two scenarios (generative AI only; generative + physical AI). ([Documentation](model_predictions/occupations/readme_occupations.md))
 
   - **[By college major](model_predictions/college_majors/)**: AI-induced changes in returns to 62 college majors, constructed via a direct major-task-skill mapping using the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8). ([Documentation](model_predictions/college_majors/readme_college_majors.md))
 
-## AI capabilities (task-level)
+### AI capabilities at the task level
 
   - **[Automation, augmentation, and simplification](ai_capabilities/)**: Task-level measures (O*NET) for generative AI and smart robots; 5- and 35-dimensional skill requirements and skill anchors. ([Documentation](ai_capabilities/readme_ai_capabilities.md))
 
