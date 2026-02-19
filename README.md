@@ -1,5 +1,7 @@
 # Task-Specific Technical Change and Comparative Advantage
 
+**Data release v1.1**
+
 ## Overview
 
 Despite large estimated productivity gains from AI across a wide range of tasks, the labor market effects are not well understood. This paper develops a methodology to estimate workers' comparative advantage across tasks and the labor market effects of task-biased technical change. We propose and estimate a dynamic general equilibrium model in which workers build multi-dimensional skills and can switch occupations based on their evolving comparative advantage. The model is informed by existing detailed data on tasks in the US labor market and new data on their skill requirements.
@@ -20,6 +22,10 @@ Authors: [Lukas Althoff](https://lukasalthoff.com) (Stanford University) & [Hugo
 
 
 ## Version history
+
+### Version 1.1
+
+- Corrected estimates of AI-induced changes in returns by college major. The previous release used coefficients from a regression that included learning ability (psi), which flipped the sign of the math coefficient. The corrected values use the 5-variable regression (without psi) that matches the paper's figure (eqvar_return_to_skill_onetscale.pdf): all skill-level changes are now negative (Manual: -0.190%, Math: -0.099%, Social: -0.406%, Technical: -0.301%, Verbal: -0.723%).
 
 ### Version 1.0
 
