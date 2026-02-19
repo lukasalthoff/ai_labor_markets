@@ -20,7 +20,7 @@ Authors: [Lukas Althoff](https://lukasalthoff.com) (Stanford University) & [Hugo
 
   - **[By college major](model_predictions/college_majors/)**: AI-induced changes in returns to 62 college majors, constructed via a direct major-task-skill mapping using the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8). ([Documentation](model_predictions/college_majors/readme_college_majors.md))
 
-  - **[AI capabilities (task-level)](model_predictions/ai_capabilities/)**: Automation, augmentation, and simplification by task (O*NET), for generative AI and smart robots; 5- and 35-dimensional skill requirements and skill anchors. ([Documentation](model_predictions/ai_capabilities/readme_ai_capabilities.md))
+  - **[AI capabilities (task-level)](ai_capabilities/)**: Automation, augmentation, and simplification by task (O*NET), for generative AI and smart robots; 5- and 35-dimensional skill requirements and skill anchors. ([Documentation](ai_capabilities/readme_ai_capabilities.md))
 
 
 ## Version history

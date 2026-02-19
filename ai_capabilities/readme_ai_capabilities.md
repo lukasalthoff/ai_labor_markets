@@ -1,10 +1,10 @@
 # Task-Level AI Capabilities
 
-[Back to main README](../../../README.md)
+[Back to main README](../../README.md)
 
 ## Overview
 
-This folder contains task-level measures of AI capabilities that feed into the model: **automation** (can AI perform the task?), **augmentation** (productivity multiplier when AI assists), and **simplification** (how skill requirements change after AI). The occupation-level AI effects in [model_predictions/occupations/](../occupations/) are built from these task-level data.
+This folder contains task-level measures of AI capabilities that feed into the model: **automation** (can AI perform the task?), **augmentation** (productivity multiplier when AI assists), and **simplification** (how skill requirements change after AI). The occupation-level AI effects in [model_predictions/occupations/](../model_predictions/occupations/) are built from these task-level data.
 
 Two AI scenarios are reported, consistent with the occupation data:
 
@@ -26,7 +26,7 @@ Two AI scenarios are reported, consistent with the occupation data:
 
 | Variable | Description |
 |----------|-------------|
-| `soc_code` | 3-digit SOC code (e.g., `11-10`), for joining to [occupation_ai_effects.csv](../occupations/occupation_ai_effects.csv) |
+| `soc_code` | 3-digit SOC code (e.g., `11-10`), for joining to [occupation_ai_effects.csv](../model_predictions/occupations/occupation_ai_effects.csv) |
 | `soc_code_onet` | Full O*NET-SOC code (e.g., `11-1011.00`) |
 | `occ_title` | Occupation title |
 | `task_id` | O*NET task identifier |
@@ -93,7 +93,7 @@ Task–skill requirements (pre- and post-genAI) were obtained by prompting GPT-4
 
 ## Crosswalking
 
-The `soc_code` field (3-digit SOC, first 5 characters of the O*NET code) matches the occupation-level file [occupation_ai_effects.csv](../occupations/occupation_ai_effects.csv), so you can join task-level capabilities to occupation-level AI effects.
+The `soc_code` field (3-digit SOC, first 5 characters of the O*NET code) matches the occupation-level file [occupation_ai_effects.csv](../model_predictions/occupations/occupation_ai_effects.csv), so you can join task-level capabilities to occupation-level AI effects.
 
 ## Source
 
