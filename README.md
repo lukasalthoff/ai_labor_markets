@@ -24,10 +24,12 @@ Authors: [Lukas Althoff](https://lukasalthoff.com) (Stanford University) & [Hugo
 ## Version history
 
 ### Version 1.1
+February 18, 2025
 
-- Corrected estimates of AI-induced changes in returns by college major. The previous release used coefficients from a regression that included learning ability (psi), which flipped the sign of the math coefficient. The corrected values use the 5-variable regression (without psi) that matches the paper's figure (eqvar_return_to_skill_onetscale.pdf): all skill-level changes are now negative (Manual: -0.190%, Math: -0.099%, Social: -0.406%, Technical: -0.301%, Verbal: -0.723%).
+- Corrected estimates of AI-induced changes in returns by college major.
 
 ### Version 1.0
+February 15, 2025
 
 - Added occupation-level AI effects dataset (93 occupations at 3-digit SOC level) with documentation
 - Added college major-level AI effects dataset (62 fields of study) with documentation
