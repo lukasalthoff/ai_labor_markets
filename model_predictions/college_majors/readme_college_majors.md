@@ -23,12 +23,12 @@ This dataset contains model-predicted AI effects on the returns to college major
 
 1. **Major-to-skill mapping:** Each major's skill intensity is scored across 5 broad skill dimensions (math, social, technical, verbal, manual) using course-level data from the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8), averaged across all universities and all available years.
 
-2. **Skill-to-wage-change mapping:** The model predicts AI-induced changes in the return to each skill dimension. These skill-level wage changes are:
-   - Manual: -1.325%
-   - Math: +1.149%
-   - Social: -2.085%
-   - Technical: -1.538%
-   - Verbal: -2.700%
+2. **Skill-to-wage-change mapping:** The model predicts AI-induced changes in the return to each skill dimension (coefficients from a regression of AI-induced welfare gains on skill levels, without controlling for learning ability). These skill-level wage changes are:
+   - Manual: -0.190%
+   - Math: -0.099%
+   - Social: -0.406%
+   - Technical: -0.301%
+   - Verbal: -0.723%
 
 3. **Major-level effect:** The AI-induced wage change for each major is the weighted average of skill-level wage changes, weighted by the major's skill intensity scores.
 
