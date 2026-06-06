@@ -4,15 +4,20 @@
 
 ## Overview
 
-This dataset contains model-predicted AI effects at the 3-digit SOC (Standard Occupational Classification) level. The data underlies Figures A15 and A16 in the paper, which show occupation-level winners and losers from AI in terms of wage bill changes and employment share changes.
+This dataset contains model-predicted AI effects at the 3-digit SOC (Standard Occupational Classification) level. The data underlies the headline winners-and-losers figures in the paper (wage bill changes and employment-share changes by occupation).
 
-Two AI scenarios are reported:
-- **Generative AI:** Effects from generative AI only (augmentation, automation, and simplification of tasks)
-- **Generative + physical AI:** Effects from generative AI combined with physical AI (e.g., robotics)
+## Canonical headline scenario
+
+The file [`occupation_ai_effects.csv`](occupation_ai_effects.csv) at the top of this folder is the **canonical** headline data, derived from:
+
+- **AI capabilities:** [Qwen-2.5-72B-Instruct-AWQ](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ) (open-weight, Alibaba) scored under the **moderate** 2030 [FRI](https://forecastingresearch.org/) scenario (Karger, Atanasov, Tetlock, *et al.*, 2024)
+- **Structural model:** steady-state of the dynamic general-equilibrium model with comparative advantage and switching costs, fed with the Qwen-moderate task-level AI capabilities
+
+Alternative model × scenario variants (GPT-4o + the other three Qwen FRI scenarios), as well as the Shapley-decomposition corners needed to attribute effects to augmentation / automation / simplification, live under [`../alternative_specifications/`](../alternative_specifications/).
 
 ## File
 
-- [`occupation_ai_effects.csv`](occupation_ai_effects.csv) -- 93 occupations at the 3-digit SOC level, 26 variables
+- [`occupation_ai_effects.csv`](occupation_ai_effects.csv) — 93 occupations at the 3-digit SOC level
 
 ## Variables
 
@@ -31,7 +36,7 @@ Two AI scenarios are reported:
 |---|---|
 | `emp_share_pre` | Employment share |
 | `mean_wage_pre` | Mean wage (model units) |
-| `wage_bill_pre` | Wage bill (= employment share x mean wage) |
+| `wage_bill_pre` | Wage bill (= employment share × mean wage) |
 | `price_pre` | Output price |
 
 ### Model Outputs: Post-AI Steady State (Generative AI)
@@ -43,14 +48,6 @@ Two AI scenarios are reported:
 | `wage_bill_post_genai` | Wage bill |
 | `price_post_genai` | Output price |
 
-### Model Outputs: Post-AI Steady State (Generative + Physical AI)
-
-| Variable | Description |
-|---|---|
-| `emp_share_post_gen_plus_physical_ai` | Employment share |
-| `mean_wage_post_gen_plus_physical_ai` | Mean wage |
-| `wage_bill_post_gen_plus_physical_ai` | Wage bill |
-
 ### Percentage Changes (Generative AI)
 
 | Variable | Description |
@@ -59,17 +56,9 @@ Two AI scenarios are reported:
 | `pct_ch_emp_share_genai` | Percent change in employment share |
 | `pct_ch_wage_bill_genai` | Percent change in wage bill |
 
-### Percentage Changes (Generative + Physical AI)
-
-| Variable | Description |
-|---|---|
-| `pct_ch_mean_wage_gen_plus_physical_ai` | Percent change in mean wage |
-| `pct_ch_emp_share_gen_plus_physical_ai` | Percent change in employment share |
-| `pct_ch_wage_bill_gen_plus_physical_ai` | Percent change in wage bill |
-
 ### Skill Requirements
 
-Occupation-level skill intensities (5-dimensional), averaged across tasks within each occupation.
+Occupation-level skill intensities (5-dimensional), task-weight-weighted means within each occupation, on the 1–7 scale (Qwen-moderate pre-AI ratings).
 
 | Variable | Description |
 |---|---|
@@ -79,10 +68,16 @@ Occupation-level skill intensities (5-dimensional), averaged across tasks within
 | `skill_verbal` | Verbal skill intensity |
 | `skill_manual` | Manual skill intensity |
 
+The generative-+-physical-AI (smart robots) columns from the previous release are not included in the canonical file because the Qwen rescore covers generative AI only. The GPT-4o variant in [`../alternative_specifications/gpt4o/`](../alternative_specifications/gpt4o/) retains them.
+
+## Reproduction
+
+The canonical CSV is produced by [`scripts/build_canonical_qwen_moderate.py`](../../scripts/build_canonical_qwen_moderate.py), which takes the raw Qwen-moderate steady-state simulation outputs (`moments_occ_*.csv`) and the existing occupation metadata (occupation group, employment from BLS) and assembles them into this schema. The structural model itself is documented in the working-paper appendix.
+
 ## Crosswalking to Other Classifications
 
 The `soc_code` field uses the 2010 SOC system at the 3-digit (minor group) level. Standard crosswalks from BLS or the Census can be used to map these to other classification systems (e.g., CIP codes for fields of study via the SOC-CIP crosswalk from NCES).
 
 ## Source
 
-Althoff, Lukas and Hugo Reichardt. "Task-Specific Technical Change and Comparative Advantage." Working Paper, 2024.
+Althoff, Lukas and Hugo Reichardt. "Task-Specific Technical Change and Comparative Advantage." Working Paper, 2026.

@@ -88,7 +88,12 @@ def build_task_ai_capabilities(proj: Path, repo: Path) -> pd.DataFrame:
     existing repo file (these are model-independent O*NET task properties)."""
 
     # Metadata from existing file
-    meta = pd.read_csv(repo / "ai_capabilities" / "task_ai_capabilities.csv")
+    # The existing GPT-4o-derived task_ai_capabilities.csv carries the model-
+    # independent task metadata (task_description, task_weight, etc.) we need.
+    # It now lives under alternative_specifications/gpt4o/.
+    meta = pd.read_csv(
+        repo / "ai_capabilities" / "alternative_specifications" / "gpt4o" / "task_ai_capabilities.csv"
+    )
     meta_cols = [
         "soc_code", "soc_code_onet", "occ_title", "task_id", "task_description",
         "task_weight", "job_zone", "physical", "management",
@@ -138,7 +143,8 @@ def build_skill_requirements_35d(proj: Path) -> pd.DataFrame:
     # Bring in occ_title and soc_code (5-char) from existing repo task_ai_capabilities,
     # so the output schema matches the existing 35d file.
     meta = (
-        pd.read_csv(Path(__file__).resolve().parent.parent / "ai_capabilities" / "task_ai_capabilities.csv",
+        pd.read_csv(Path(__file__).resolve().parent.parent / "ai_capabilities" /
+                    "alternative_specifications" / "gpt4o" / "task_ai_capabilities.csv",
                     usecols=["soc_code", "soc_code_onet", "occ_title", "task_id"])
         .drop_duplicates(["soc_code_onet", "task_id"])
     )
@@ -185,15 +191,21 @@ def build_occupation_ai_effects(proj: Path, repo: Path,
 
     # Existing file -> occupation metadata (occ_group, tot_employment, occ_title)
     existing = pd.read_csv(
-        repo / "model_predictions" / "occupations" / "occupation_ai_effects.csv",
+        repo / "model_predictions" / "alternative_specifications" / "gpt4o" / "occupation_ai_effects.csv",
         usecols=["soc_code", "occ_title", "occ_group", "tot_employment"],
     )
+
+    # moments_occ files use 7-char soc_code ("11-1000"); the existing repo file uses
+    # the 5-char minor-group form ("11-10"). Convert via truncation.
+    def to_5char(s: pd.Series) -> pd.Series:
+        return s.str.slice(0, 5)
 
     # moments_occ_preai -> emp_share_pre, mean_wage_pre, wage_bill_pre, price_pre
     pre = pd.read_csv(
         proj / "model_moments" / "moments_occ_preai_standardces.csv",
         usecols=["soc_code", "share", "meanwage", "p"],
     ).rename(columns={"share": "emp_share_pre", "meanwage": "mean_wage_pre", "p": "price_pre"})
+    pre["soc_code"] = to_5char(pre["soc_code"])
     pre["wage_bill_pre"] = pre["emp_share_pre"] * pre["mean_wage_pre"]
 
     # moments_occ_genai_qwen_moderate -> post_genai columns
@@ -202,9 +214,9 @@ def build_occupation_ai_effects(proj: Path, repo: Path,
         usecols=["soc_code", "share", "meanwage", "p"],
     ).rename(columns={"share": "emp_share_post_genai", "meanwage": "mean_wage_post_genai",
                       "p": "price_post_genai"})
+    post["soc_code"] = to_5char(post["soc_code"])
     post["wage_bill_post_genai"] = post["emp_share_post_genai"] * post["mean_wage_post_genai"]
 
-    # Trim trailing 0s in soc_code if needed; both should already be 5-char (e.g. "11-10")
     occ_eff = (
         existing
         .merge(pre, on="soc_code", how="inner")
