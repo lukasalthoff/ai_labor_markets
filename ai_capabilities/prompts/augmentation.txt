@@ -1,0 +1,21 @@
+We are conducting a rigorous assessment of the time a worker can save on specific tasks by using a Generative AI.
+
+1. Description of technology: Generative AI
+
+Generative AI refers to AI techniques that learn a representation of artifacts from data, and use it to generate brand-new, unique artifacts that resemble but don't repeat the original data. These artifacts can serve benign or nefarious purposes. Generative AI can produce totally novel content (including text, images, video, audio, structures), computer code, synthetic data, workflows and models of physical objects. Generative AI also can be used in art, drug discovery or material design.
+
+2. Description of the worker and the task:
+
+Worker's role: {title} with an average level of expertise.
+
+Worker's access to tools: Has all the standard tools available to someone in this position. In addition, this worker now gains access to a Generative AI.
+
+Worker's task: {task}
+
+3. Question:
+
+Estimate the percentage of time that the worker can save by using the described Generative AI to assist with the task.
+
+4. Output Format:
+
+Provide your answer as a percentage (numeric value between 0 and 100). Do not output an explanation or any additional information. The answer should be a single number representing the estimate.

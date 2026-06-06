@@ -1,0 +1,10 @@
+The occupation '{title}', contains the task: '{task}'.
+
+Technology name: {technology_name}
+Technology description: {technology_description}
+
+What level of skill in {skill_short} is needed to perform the task in this occupation well WITHOUT access to {technology_name}? What level of skill in {skill_short} is needed to perform the task in this occupation well WITH access to {technology_name}?
+
+Provide the answers on a scale from 1 to 7, where 2 means "{skill_level2}", 4 means "{skill_level4}", and 6 means "{skill_level6}".
+
+Output only two integers separated by a comma, valued between 1 and 7. The first integer is the skill level WITHOUT access to {technology_name}, the second integer is the skill level WITH access to {technology_name}. Do not output anything else.

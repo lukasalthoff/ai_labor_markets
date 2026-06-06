@@ -1,0 +1,72 @@
+# T Automation Rubric
+
+Evaluate the occupation/task pair below against each of the five labels (T0, T1, T2, T3, T4). Pick the single label that best fits the task. Do not default to T0 — only choose T0 if the task strictly meets the T0 definition.
+
+The five labels are:
+- T0: No automation exposure
+- T1: Low automation exposure
+- T2: Moderate automation exposure
+- T3: High automation exposure
+- T4: Full automation exposure
+
+## Rubric
+
+Generative AI refers to AI techniques that learn a representation of artifacts from data, and use it to generate brand-new, unique artifacts that resemble but don't repeat the original data. These artifacts can serve benign or nefarious purposes. Generative AI can produce totally novel content (including text, images, video, audio, structures), computer code, synthetic data, workflows and models of physical objects. Generative AI also can be used in art, drug discovery or material design.
+
+Assume you are a worker with an average level of expertise in your role trying to complete the given task. You have access to Generative AI as well as any other existing software or computer hardware tools mentioned in the task. You also have access to any commonly available technical tools accessible via a laptop (e.g. a microphone, speakers, etc.). You do not have access to any other physical tools or materials.
+
+Please label the given task according to the rubric below.
+
+**T0 No-Automation Exposure** A class of tasks for which Generative AI cannot conceivably perform any aspect of the task in any manner.
+
+**T4 Full Automation Exposure** A class of tasks where, in most contexts in which this task is currently performed by a human, Generative AI can complete all aspects of this task with high quality when prompted by a human. The output does not normally require oversight by a human. Oversight is not normally required for tasks labeled T4 because the consequences for failure or inaccuracy are small for this task, human judgment is not necessary to complete this task, and generative models can consistently perform this task with very high quality.
+
+**T3 High Automation Exposure** A class of tasks where, in most contexts in which this task is currently performed by a human, Generative AI could complete 90-100% of the components of the task when prompted, but the output requires oversight from a human. Oversight is normally required because the consequences for failure or inaccuracy are significant for this task, human judgment is necessary to complete this task, and/or generative models cannot perform all aspects of this task with high quality consistently. These tasks rely almost exclusively on the processing of digital information, but human judgment is needed to ensure that any digital outputs from Generative AI are high enough quality to be acceptable for the particular context.
+
+**T2 Moderate Automation Exposure** A class of tasks where, in most contexts in which this task is performed by a human, Generative AI could complete between 50%-90% of the components of the task at high quality. These tasks normally rely heavily on the processing of digital information, but a significant portion of the task also involves actions that Generative AI cannot perform with high quality. These tasks require at least some human action beyond just double-checking generative model outputs (such as interpretation, judgment, human-to-human communication, or physical actions).
+
+**T1 Low Automation Exposure** A class of tasks where, in most contexts in which this task is performed by a human, Generative AI could complete between 0%-50% of the components of the task at high quality. These tasks normally rely only partially on the processing of digital information, while the majority of the task involves actions that Generative AI cannot perform with high quality. A majority of the actions that need to be taken to complete this task require a human to perform the action.
+
+## Definitions
+
+**High quality** means someone receiving or reviewing the output would not be able to tell the difference between whether it came from Generative AI or a human. For tasks that require a lot of interaction during the completion of the task (e.g. meetings, negotiations), high quality means the people you were interacting with either would not know or would not care that they were interacting with Generative AI.
+
+**Digital information** or **information that can easily be expressed digitally** includes but is not limited to text, audio, images, video, PDFs, books, code, and data.
+
+## Annotation Examples
+
+Occupation: Special Education Teachers, Preschool
+Task: Develop individual educational plans (IEPs) designed to promote students' educational, physical, or social development.
+Automation score (T0/T1/T2/T3/T4): T1
+Explanation: GenAI drafts SMART goals, accommodations, progress-monitoring templates, and meeting summaries well. But "develop" in practice includes assessments, legal compliance under IDEA, multi-party negotiation, and parent/team consensus—high-stakes, non-digital work that goes far beyond checking model output. The human does a majority of the task through judgment and human-to-human interaction → <50% automatable at high quality.
+
+Occupation: Construction and Building Inspectors
+Task: Inspect and monitor construction sites to ensure adherence to safety standards, building codes, or specifications.
+Automation score (T0/T1/T2/T3/T4): T1
+Explanation: T1 is right because authority, on-site judgment, and safety liability are inherently human/embodied. Modern AI (CV on photos/video, drone logs, code lookups) can pre-screen and draft reports, but the core task is physical inspection plus enforcement. The given explanation is dated—codes are digital; the real blockers are embodiment, accountability, and legal sign-off.
+
+Occupation: Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders
+Task: Dump sugar dust from collectors into melting tanks and add water to reclaim sugar lost during processing.
+Automation score (T0/T1/T2/T3/T4): T0
+Explanation: The task as phrased is purely physical and you've restricted tools to what's on a laptop. GenAI can't perform any part of this task (not "write SOPs" but do the dumping). If the task were broadened to "optimize reclaim procedure / generate checklists," exposure would rise, but for the literal action it's T0.
+
+Occupation: Interpreters and Translators
+Task: Refer to reference materials (dictionaries, lexicons, encyclopedias, computerized terminology banks) as needed to ensure translation accuracy.
+Automation score (T0/T1/T2/T3/T4): T4
+Explanation: GenAI can autonomously retrieve, disambiguate, and compile authoritative references and recommended terms with citations and confidence scores across most high-resource language pairs. The subtask is fully digital, consistent, and does not normally require human oversight.
+
+Occupation: Electronics Engineer
+Task: Prepare documentation containing information such as confidential descriptions or specifications of proprietary hardware or software, product development or introduction schedules, product costs, or information about product performance weaknesses.
+Automation score (T0/T1/T2/T3/T4): T3
+Explanation: Given structured inputs (requirements, BOMs, test data), GenAI can generate nearly all documentation variants (design specs, DFMEA summaries, release notes, red-team risk write-ups), maintain traceability tables, and enforce style guides. Consequences and confidentiality mean human review is required, but the model can complete ~90–100% of components in digital form.
+
+Occupation: Advanced Practice Psychiatric Nurse
+Task: Write prescriptions for psychotropic medications as allowed by state regulations and collaborative practice agreements.
+Automation score (T0/T1/T2/T3/T4): T3
+Explanation: If the medication choice is already clinically decided, GenAI can populate eRx fields, check interactions/contraindications, map to formularies, and draft prior-auth notes—essentially all digital components. High-stakes legality and safety mandate human sign-off, but execution is 90–100% automatable with oversight. (If the task were "evaluate and decide what to prescribe," exposure would drop; the annotation's verb is "write.")
+
+## Now, apply the above rubric to the example below:
+
+Occupation: {title}
+Task: {task}
+Automation score (T0/T1/T2/T3/T4):
