@@ -72,7 +72,7 @@ The generative-+-physical-AI (smart robots) columns from the previous release ar
 
 ## Reproduction
 
-The canonical CSV is produced by [`scripts/build_canonical_qwen_moderate.py`](../../scripts/build_canonical_qwen_moderate.py), which takes the raw Qwen-moderate steady-state simulation outputs (`moments_occ_*.csv`) and the existing occupation metadata (occupation group, employment from BLS) and assembles them into this schema. The structural model itself is documented in the working-paper appendix.
+The canonical CSV was assembled from the Qwen-moderate steady-state simulation outputs of the structural model. The model itself is documented in the working-paper appendix.
 
 ## Crosswalking to Other Classifications
 

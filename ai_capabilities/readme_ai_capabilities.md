@@ -127,7 +127,7 @@ Each rating dimension is elicited with a dedicated prompt template (see [`prompt
 
 ## Reproduction
 
-The canonical CSVs at the top of this folder are produced by [`scripts/build_canonical_qwen_moderate.py`](../scripts/build_canonical_qwen_moderate.py), which takes the raw Qwen rating outputs (per task–skill or per task) and assembles them into the file schemas above. The end-to-end scoring pipeline (vLLM, batch inference, JSONL aggregation) is described in the working-paper repository accompanying this dataset; the prompts in [`prompts/`](prompts/) are the canonical reference for what the model received.
+The canonical CSVs were assembled from the raw Qwen task-skill scoring outputs. The end-to-end scoring pipeline (vLLM, batch inference, JSONL aggregation) is documented in the working-paper repository; the prompts in [`prompts/`](prompts/) are the canonical reference for what the model received.
 
 ## Crosswalking
 
