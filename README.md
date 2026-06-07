@@ -22,7 +22,7 @@ The canonical headline data are derived from **Qwen-2.5-72B-Instruct-AWQ** score
 
   - **[By college major](model_predictions/college_majors/)**: AI-induced changes in returns to 62 college majors, constructed via a direct major-task-skill mapping using the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8). ([Documentation](model_predictions/college_majors/readme_college_majors.md))
 
-  - **[Alternative specifications](model_predictions/alternative_specifications/)**: Variants grouped by 2030 AI scenario (no explicit scenario / slow / rapid) × model (GPT-4o, Qwen); Shapley-decomposition corners. ([Documentation](model_predictions/alternative_specifications/readme_alternative_specifications.md))
+  - **[Alternative specifications](model_predictions/alternative_specifications/)**: Variants grouped by 2030 AI scenario (no explicit scenario / slow / rapid) × model (GPT-4o, Qwen). ([Documentation](model_predictions/alternative_specifications/readme_alternative_specifications.md))
 
 ### AI capabilities at the task level
 
@@ -40,8 +40,9 @@ June 6, 2026
 - Added [`ai_capabilities/figures/`](ai_capabilities/figures/) with cross-model agreement visualisations.
 - Reorganised `alternative_specifications/` to be AI-scenario-first, then model. Moved the previous v1.2 GPT-4o data to `alternative_specifications/no_explicit_scenario/gpt4o/`.
 - Dropped the generative + physical-AI (smart-robots) columns; v1.3 covers generative AI only.
-- Added Qwen × {no_explicit_scenario, slow, rapid} variants and Shapley-decomposition corners.
+- Added Qwen × {no_explicit_scenario, slow, rapid} variants.
 - Added OpenAI **gpt-oss** task-level capability variants across all four AI scenarios (task-level only; not propagated through the structural model).
+- Re-derived the college-major AI effects using the v1.3 Qwen-moderate eqvar return-to-skill regression (replacing the v1.2 hardcoded GPT-4o-era skill coefficients).
 
 ### Version 1.2
 February 19, 2025

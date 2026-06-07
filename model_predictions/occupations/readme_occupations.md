@@ -13,7 +13,7 @@ The file [`occupation_ai_effects.csv`](occupation_ai_effects.csv) at the top of 
 - **AI capabilities:** [Qwen-2.5-72B-Instruct-AWQ](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ) (open-weight, Alibaba) scored under the **moderate** 2030 AI scenario (Karger, Atanasov, Tetlock, *et al.*, 2024)
 - **Structural model:** steady-state of the dynamic general-equilibrium model with comparative advantage and switching costs, fed with the Qwen-moderate task-level AI capabilities
 
-Alternative AI-scenario × model variants — GPT-4o without an explicit scenario, plus Qwen under each of the other 2030 scenarios — as well as the Shapley-decomposition corners needed to attribute effects to augmentation / automation / simplification, live under [`../alternative_specifications/`](../alternative_specifications/).
+Alternative AI-scenario × model variants — GPT-4o without an explicit scenario, plus Qwen under each of the other 2030 scenarios — live under [`../alternative_specifications/`](../alternative_specifications/).
 
 ## File
 
