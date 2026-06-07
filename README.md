@@ -22,7 +22,7 @@ The canonical headline data are derived from **Qwen-2.5-72B-Instruct-AWQ** score
 
   - **[By college major](model_predictions/college_majors/)**: AI-induced changes in returns to 62 college majors, constructed via a direct major-task-skill mapping using the [Course-Skill Atlas](https://www.nature.com/articles/s41597-024-03931-8). ([Documentation](model_predictions/college_majors/readme_college_majors.md))
 
-  - **[Alternative specifications](model_predictions/alternative_specifications/)**: Variants grouped by 2030 AI scenario (no explicit scenario / slow / rapid) × model (GPT-4o, Qwen). ([Documentation](model_predictions/alternative_specifications/readme_alternative_specifications.md))
+  - **[Alternative specifications](model_predictions/occupations/alternative_specifications/)**: Variants grouped by 2030 AI scenario (no explicit scenario / slow / rapid) × model (GPT-4o, Qwen). ([Documentation](model_predictions/occupations/alternative_specifications/readme_alternative_specifications.md))
 
 ### AI capabilities at the task level
 
