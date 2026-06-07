@@ -2,27 +2,37 @@
 
 [Back to main README](../../README.md)
 
-This folder holds alternative model × scenario variants of the structural-model occupation-level predictions. The headline (canonical) data at the parent folder ([`../occupations/occupation_ai_effects.csv`](../occupations/occupation_ai_effects.csv)) uses model inputs from **Qwen-2.5-72B-Instruct-AWQ** scored under the **moderate** Forecasting Research Institute (FRI) scenario for 2030 (Karger, Atanasov, Tetlock, *et al.*, 2024).
+This folder holds alternative AI-scenario × model variants of the structural-model occupation-level predictions. The headline (canonical) data at the parent folder ([`../occupations/occupation_ai_effects.csv`](../occupations/occupation_ai_effects.csv)) uses model inputs from **Qwen-2.5-72B-Instruct-AWQ** scored under the **moderate** 2030 AI scenario.
 
 Each variant ships `occupation_ai_effects.csv` in the same schema as the canonical.
 
-## Layout
+## Layout (AI scenario first, then model)
 
 ```
-gpt4o/
-  occupation_ai_effects.csv              # also keeps the generative + physical-AI (smart robots) columns
-qwen2.5-72b-awq/
-  baseline/  slow/  rapid/
-    occupation_ai_effects.csv
+no_explicit_scenario/        # Model rated without any 2030 AI-scenario system message
+  gpt4o/
+  qwen2.5-72b-awq/
+slow/                        # Slow 2030 AI-progress trajectory
+  qwen2.5-72b-awq/
+rapid/                       # Rapid 2030 AI-progress trajectory
+  qwen2.5-72b-awq/
 ```
 
-The Qwen-moderate variant is the canonical headline at the parent level and is not duplicated here.
+The moderate scenario (Qwen) is the canonical headline at the parent level and is not duplicated here.
 
-## Why each variant exists
+## Variants by AI scenario
 
-| Variant | Purpose |
+### No explicit scenario
+
+| Model | Notes |
 |---|---|
-| `gpt4o/` | The previous v1.2 release. Cross-vendor robustness vs. Qwen. Retains the `emp_share_post_gen_plus_physical_ai` / `mean_wage_post_gen_plus_physical_ai` / `wage_bill_post_gen_plus_physical_ai` columns that the Qwen rescore did not cover. |
-| `qwen2.5-72b-awq/baseline/` | Qwen without FRI conditioning — anchors the FRI sensitivity range. |
-| `qwen2.5-72b-awq/slow/` | Conservative 2030 AI-capability trajectory. |
-| `qwen2.5-72b-awq/rapid/` | Aggressive 2030 AI-capability trajectory. |
+| `gpt4o/` | GPT-4o, the previous (v1.2) release |
+| `qwen2.5-72b-awq/` | Qwen-2.5-72B-Instruct-AWQ baseline (no scenario conditioning) |
+
+### Slow / Rapid 2030
+
+| Model | Slow | Rapid |
+|---|---|---|
+| `qwen2.5-72b-awq/` | ✅ | ✅ |
+
+The gpt-oss model has not been propagated through the structural model. See [`../../ai_capabilities/alternative_specifications/`](../../ai_capabilities/alternative_specifications/) for gpt-oss task-level capabilities.

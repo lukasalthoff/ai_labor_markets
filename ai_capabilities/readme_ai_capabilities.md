@@ -11,9 +11,9 @@ This folder contains task-level measures of AI capabilities that feed into the m
 The four CSV files at the top of this folder are the **canonical** headline data, derived from:
 
 - **Model:** [Qwen-2.5-72B-Instruct-AWQ](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ) (open-weight, Alibaba)
-- **Scenario:** **moderate** 2030 AI-progress trajectory from the [Forecasting Research Institute (FRI)](https://forecastingresearch.org/) (Karger, Atanasov, Tetlock, *et al.*, 2024)
+- **AI scenario:** **moderate** 2030 AI-progress trajectory (Karger, Atanasov, Tetlock, *et al.*, 2024)
 
-Alternative model × scenario variants (GPT-4o + the other three Qwen FRI scenarios) live under [`alternative_specifications/`](alternative_specifications/).
+Alternative AI-scenario × model variants — GPT-4o and OpenAI gpt-oss without an explicit scenario, plus Qwen and gpt-oss under each of the other 2030 scenarios — live under [`alternative_specifications/`](alternative_specifications/).
 
 ## Files
 
@@ -25,7 +25,7 @@ Alternative model × scenario variants (GPT-4o + the other three Qwen FRI scenar
 | [skill_anchors.csv](skill_anchors.csv) | O*NET skill definitions and rating anchors (levels 2, 4, 6) | 35 |
 | [prompts/](prompts/) | Verbatim LLM prompt templates used to elicit the ratings | 3 files |
 | [figures/](figures/) | Cross-model agreement figures | 3 files |
-| [alternative_specifications/](alternative_specifications/) | GPT-4o variant and other Qwen FRI scenarios | — |
+| [alternative_specifications/](alternative_specifications/) | Variants grouped by 2030 AI scenario × model (GPT-4o, Qwen, gpt-oss) | — |
 
 ## Variables
 
@@ -45,7 +45,7 @@ Alternative model × scenario variants (GPT-4o + the other three Qwen FRI scenar
 | `automatable_genai` | Generative AI can automate this task (0/1, =1 if Qwen rated T3 or T4) |
 | `augmentation_genai` | Generative AI productivity multiplier (1 = no gain) |
 
-Smart-robots / generative + physical AI columns are not included in the canonical file (the Qwen rescore covers generative AI only). See [`alternative_specifications/gpt4o/`](alternative_specifications/gpt4o/) for the GPT-4o-derived data that includes those columns.
+Smart-robots / generative + physical AI columns from the previous v1.2 release are not included in v1.3.
 
 ### task_skill_requirements_5d.csv
 
@@ -96,14 +96,15 @@ The 5-dimensional skill classification used in the model aggregates 28 of the 35
 
 ## Models
 
-We score each (occupation, task) — and for simplification each (occupation, task, skill) — through two LLMs:
+We score each (occupation, task) — and for simplification each (occupation, task, skill) — through three LLMs:
 
-- **GPT-4o** (closed, OpenAI). Ratings are unconditioned (no FRI scenario). The GPT-4o data is the version-1.2 publication baseline; it lives under [`alternative_specifications/gpt4o/`](alternative_specifications/gpt4o/) and additionally includes smart-robots / physical-AI columns that the Qwen rescore did not cover.
-- **Qwen-2.5-72B-Instruct-AWQ** (open, Alibaba). Ratings are conditioned on each of four FRI scenarios (baseline / slow / moderate / rapid 2030). The Qwen-moderate variant is the canonical headline data at the top of this folder; the other three variants are under [`alternative_specifications/qwen2.5-72b-awq/`](alternative_specifications/qwen2.5-72b-awq/).
+- **GPT-4o** (closed, OpenAI). Ratings are unconditioned (no explicit AI scenario). The GPT-4o data is the version-1.2 publication baseline; it lives under [`alternative_specifications/no_explicit_scenario/gpt4o/`](alternative_specifications/no_explicit_scenario/gpt4o/).
+- **Qwen-2.5-72B-Instruct-AWQ** (open, Alibaba). Ratings are conditioned on each of four AI scenarios (no explicit scenario / slow / moderate / rapid 2030). The Qwen-moderate variant is the canonical headline data at the top of this folder; the other three are under [`alternative_specifications/`](alternative_specifications/).
+- **gpt-oss** (open, OpenAI). Same four AI scenarios as Qwen. All variants live under [`alternative_specifications/`](alternative_specifications/).
 
-## FRI scenario system messages (verbatim)
+## AI scenario system messages (verbatim)
 
-These are prepended as system messages to each Qwen request. They are not used for GPT-4o or for the Qwen `baseline` variant.
+These are prepended as system messages to each Qwen and gpt-oss request. They are not used for GPT-4o or for the `no_explicit_scenario` variant of any model.
 
 > **Slow 2030.** AI is a capable assisting technology for humans: writing literature reviews at the level of a capable PhD student, handling half of all freelance software-engineering jobs that would take an experienced human a day to complete, topping up your online grocery cart, and physically being able to unload dishwashers in some homes.
 
@@ -111,7 +112,7 @@ These are prepended as system messages to each Qwen request. They are not used f
 
 > **Rapid 2030.** AI systems surpass humans in most cognitive and physical tasks. Autonomous researchers can collapse years-long research timelines into months or even days. AI systems can surpass all freelance software engineers, customer service agents, paralegals, and clerical workers. Models can write 2025-Pulitzer-caliber books—and negotiate the resulting book contract. Robots can assist in an arbitrary home or factory anywhere in the world.
 
-Source: [Forecasting Research Institute](https://forecastingresearch.org/) (Karger, Atanasov, Tetlock, *et al.*, "Forecasting the Economic Effects of AI," 2024).
+Source: Karger, Atanasov, Tetlock, *et al.*, "Forecasting the Economic Effects of AI," 2024 (Forecasting Research Institute).
 
 ## Cross-model agreement
 
@@ -123,7 +124,7 @@ The three figures in [`figures/`](figures/) summarise how the LLM-derived measur
 
 ## Rating methodology
 
-Each rating dimension is elicited with a dedicated prompt template (see [`prompts/`](prompts/)). At request-build time, the placeholders `{title}`, `{task}`, etc. are substituted, and (for Qwen) the FRI scenario system message is prepended. Inference uses `temperature=0` and a fixed `seed=42`.
+Each rating dimension is elicited with a dedicated prompt template (see [`prompts/`](prompts/)). At request-build time, the placeholders `{title}`, `{task}`, etc. are substituted, and (for Qwen and gpt-oss) the AI-scenario system message is prepended. Inference uses `temperature=0` and a fixed `seed=42`.
 
 ## Reproduction
 

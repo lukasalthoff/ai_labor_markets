@@ -2,7 +2,7 @@
 
 [Back to ai_capabilities README](../readme_ai_capabilities.md)
 
-These are the exact prompt templates sent to the LLM (Qwen-2.5-72B-Instruct-AWQ for the canonical estimates, also GPT-4o for alternative specifications) to elicit task-level AI capability ratings.
+These are the exact prompt templates sent to the LLM (Qwen-2.5-72B-Instruct-AWQ for the canonical estimates; GPT-4o and gpt-oss for alternative specifications) to elicit task-level AI capability ratings.
 
 | File | Dimension measured | Output scale |
 |---|---|---|
@@ -12,4 +12,4 @@ These are the exact prompt templates sent to the LLM (Qwen-2.5-72B-Instruct-AWQ 
 
 Placeholders such as `{title}`, `{task}`, and `{skill_name}` are substituted at request-build time. The 35 O*NET skill anchors used to calibrate the 1-7 scale in `simplification.txt` are listed in [`../skill_anchors.csv`](../skill_anchors.csv).
 
-For the four Forecasting Research Institute (FRI) scenarios in the alternative specifications (slow / moderate / rapid 2030, baseline = unconditioned), the relevant scenario description is prepended as a system message before each user prompt. The verbatim FRI system messages are documented in [`../readme_ai_capabilities.md`](../readme_ai_capabilities.md).
+For the four AI scenarios used in the alternative specifications (slow / moderate / rapid 2030, plus a no-explicit-scenario baseline), the relevant scenario description is prepended as a system message before each user prompt. The verbatim system messages are documented in [`../readme_ai_capabilities.md`](../readme_ai_capabilities.md).

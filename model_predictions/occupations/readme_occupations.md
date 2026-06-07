@@ -10,10 +10,10 @@ This dataset contains model-predicted AI effects at the 3-digit SOC (Standard Oc
 
 The file [`occupation_ai_effects.csv`](occupation_ai_effects.csv) at the top of this folder is the **canonical** headline data, derived from:
 
-- **AI capabilities:** [Qwen-2.5-72B-Instruct-AWQ](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ) (open-weight, Alibaba) scored under the **moderate** 2030 [FRI](https://forecastingresearch.org/) scenario (Karger, Atanasov, Tetlock, *et al.*, 2024)
+- **AI capabilities:** [Qwen-2.5-72B-Instruct-AWQ](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ) (open-weight, Alibaba) scored under the **moderate** 2030 AI scenario (Karger, Atanasov, Tetlock, *et al.*, 2024)
 - **Structural model:** steady-state of the dynamic general-equilibrium model with comparative advantage and switching costs, fed with the Qwen-moderate task-level AI capabilities
 
-Alternative model × scenario variants (GPT-4o + the other three Qwen FRI scenarios), as well as the Shapley-decomposition corners needed to attribute effects to augmentation / automation / simplification, live under [`../alternative_specifications/`](../alternative_specifications/).
+Alternative AI-scenario × model variants — GPT-4o without an explicit scenario, plus Qwen under each of the other 2030 scenarios — as well as the Shapley-decomposition corners needed to attribute effects to augmentation / automation / simplification, live under [`../alternative_specifications/`](../alternative_specifications/).
 
 ## File
 
@@ -68,7 +68,7 @@ Occupation-level skill intensities (5-dimensional), task-weight-weighted means w
 | `skill_verbal` | Verbal skill intensity |
 | `skill_manual` | Manual skill intensity |
 
-The generative-+-physical-AI (smart robots) columns from the previous release are not included in the canonical file because the Qwen rescore covers generative AI only. The GPT-4o variant in [`../alternative_specifications/gpt4o/`](../alternative_specifications/gpt4o/) retains them.
+The generative-+-physical-AI (smart robots) columns from the previous v1.2 release are not included in v1.3.
 
 ## Reproduction
 
